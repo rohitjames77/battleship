@@ -1,21 +1,19 @@
 class Ship {
-  constructor() {
-    this.gridLength = 5;
+  constructor(gridLength) {
+    this.gridLength = gridLength;
   }
   hit(player1Coordinates, player2Coordinates) {
-    let hits = 0;
-    let missed = 0;
+    let hits = 4;
+
     if (player1Coordinates === player2Coordinates) {
       hits++;
       console.log(hits);
-      return hits;
-    } else if (player1Coordinates !== player2Coordinates) {
-      console.log("Missed");
-      missed++;
-      return missed;
     }
+    return hits;
   }
-  isSunk() {}
+  isSunk(hit,gridLength) {
+   return hit === gridLength?true:false
+  }
 }
-const carrier = new Ship();
+const carrier = new Ship(5);
 export { carrier };
