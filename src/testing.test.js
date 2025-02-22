@@ -14,5 +14,13 @@ test('carrier object should have a method called hit', ()=>{
   expect(carrier).toHaveProperty('hit')
 })
 test('hit function should return number of hits carrier have received if coordinates matches ',()=>{
-  expect(carrier.hit('a2','a2')).toEqual(1);
+  expect(carrier.hit('a2','a2')).toEqual(5);
+})
+
+test('carrier object should have isSunk function',()=>{
+expect(carrier).toHaveProperty('isSunk')
+})
+
+test('isSunk function should return sunk status',()=>{
+  expect(carrier.isSunk(carrier.hit('a2','a2'),carrier.gridLength)).toEqual(true);
 })
